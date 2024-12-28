@@ -220,7 +220,7 @@
                          Definition of a Javascript function that returns a list of web actions (inserting to input box, clicking buttom, etc.). 
                          This function is executed when loaded the web page whose URL matches the URL Pattern.
                          The returned actions are executed inside of the page.<br>
-                         - Argument: URL of the web site in the active tab.'<br>
+                         - Argument: URL of the web site in the active tab.<br>
                          - Return: A list of action object in the following form:<br>
                               { selector: <selector>, value: <value text>, event: <event name> }<br>
                       
