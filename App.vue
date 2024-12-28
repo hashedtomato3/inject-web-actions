@@ -221,9 +221,11 @@
                          This function is executed when loaded the web page whose URL matches the URL Pattern.
                          The returned actions are executed inside of the page.<br>
                          - Argument: URL of the web site in the active tab.<br>
-                         - Return: A list of action object in the following form:<br>
-                              { selector: <selector>, value: <value text>, event: <event name> }<br>
-                      
+                         - Return: A list of action objects each of that have the following keys:<br>
+                         -- selector: CSS selector string that specifies the target elements. This string is used as argument of document.querySelectors().<br>
+                         -- value: value text which is assigned to the value property of the target element. Target element must be input element, textarea element, etc.<br>
+                         -- event: Event name which is fired at the target element.<br>
+                         -- selector key is mandatory, one and only one of value and event keys is mandatory.
                       '},
                   ],
                   manualColumns: [
@@ -237,7 +239,6 @@
                           label: 'Description',
                       }
                   ],
-                  testvar: "testv",
         };
       },
       computed: {
