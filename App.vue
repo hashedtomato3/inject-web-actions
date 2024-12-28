@@ -214,41 +214,14 @@
                 zipDownloadLink: null,
                 storeLink : "https://chrome.google.com/webstore/detail/"+chrome.runtime.id,
                 manualData: [
-                    { 'item': 'title', 'description': 'Title of the icon menu'},
-                    { 'item': 'icon', 'description': 'Relative path name of icon image file from "host" folder. It should be 16x16 PNG file.'},
-                    { 'item': 'Menu Items', 'description': 'List of  menu items'},
-
-{ 'item': 'menu item: Title', 'description': 'Title of the menu item'},
-                    { 'item': 'menu item: URL Filter', 'description': '(optional) Comma-separated list of URL pattern strings.  The menu item is shown only if one of the string matches the URL of active page. Refer <a href="https://developer.chrome.com/docs/extensions/mv3/match_patterns/">pattern format.</a>'},
-                    { 'item': 'menu item: Removal Elements', 'description': '	(Optional) Semicolon-separated CSS selectors. The elements selected by the selectors are excluded in HTML text sent to the native client.'},
-                    { 'item': 'menu item: User Script', 'description': 'Native script: User script is executed by NodeJS in the local PC<br>Browser script: User script is executed in sandbox in the web browser'},
-                    { 'item': 'menu item: (script)', 'description': `
-                      User javascript code that is executed by Node.js or the web browser.
-                      This code must contain only the definition of <code>function ScriptFunction(info)</code>, 
-                      which is executed when the menu item is clicked.
-                      <code>info</code> is a object of information of Web Page in Active tab:<br>
-                      - info.url: URL of the page<br>
-                      - info.html: HTML text of the page<br>
-                      - info.tilte: Title of the page<br>
-                      - info.frames[n].html: HTML text of the n'th frame document in the page.<br>
-                      - info.frame[n].id: Id of the n'th frame in the page.<br>
-                      - info.frame[n].name: name of the n'th frame in the page.<br>
-                      Return value is an object that may have the following keys.
-                      The key "html" and "action" are exclusive.<br>
-                      - html: a HTML text of custom page that will be shown in new Tab. 
-                        When user clicks a form in the page, specified action function will be called.<br>
-                      - action: an action function name that wlii be called immediately.<br>
-                      - data: an object that is passed to the next action function.<br>
-                      Action function name can be specified to the attribute "data-action" of buttons in the form in the custom page.<br>
-                   `},
-                    { 'item': 'menu item: Action Function', 'description': 'same as User Script'},
-                    { 'item': 'menu item: Action Name', 'description': 'the action name of the function'},
-                    { 'item': 'menu item: (script)', 'description': `
-                      Same as user script except for the arugment <code>info</code>.
-                      <code>info</code> is a object that may have the following keys:<br>
-                      - info.form: the form data ([[name1, value1], [name2, value2], ...]) from the custom page.<br>
-                      - info.data: "data" property of the object returned by the previous action function or user script.<br>
-                   `},
+                    { 'item': 'Title', 'description': 'Title of the rule'},
+                    { 'item': 'URL Pattern', 'description': '.'},
+                    { 'item': 'Action Generator', 'description': 'A function that returns a list of web actions (inserting to input box, clicking buttom, etc.).<br>
+                         - Argument: URL of the web site in the active tab.'<br>
+                         - Return: A list of action object in the following form:<br>
+                              { selector: <selector>, value: <value text>, event: <event name> }<br>
+                      
+                      '},
                   ],
                   manualColumns: [
                       {
