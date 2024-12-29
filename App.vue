@@ -108,9 +108,11 @@
 
             <br><br>
             <p class="subtitle is-5">Rules Embedded Link</p>
+            
             <p>Current rules are embedded in the parameter of the following link address.
             When the link address is opened, the embedded rules are restored and saved in browser.</p>
-            <a=“embeddedLink”>{{embeddedLink}}</a>
+            <a href=“embeddedLink” target=“_blank”>{{embeddedLink}}</a>
+            <p>It means, if you bookmark it, you can restore the rules anytime.</p>
           </div>
 
           <!-- Manual -->
