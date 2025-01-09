@@ -1,0 +1,29 @@
+{
+    "name": "Inject Web Actions",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "description": "Automatically execute pre-defined actions (inserting values, clicking buttons, etc.) when new web page loaded.",
+    "icons": {
+        "128": "icon-128.png"
+    },
+    "permissions": [
+        "tabs",
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "options_page": "/vue/dist/index.html",
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    },
+    "sandbox": {
+        "pages": [
+            "/sandbox.html"
+        ]
+    }
+}
+
