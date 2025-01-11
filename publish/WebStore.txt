@@ -1,22 +1,12 @@
+Automatically execute pre-defined actions (inserting values, clicking buttons, etc.) when new web page loaded.
 
-This extension provides a customizable menu to run user scripts (native or browser Javascript) and arbitary loccal PC programs. User script can include HTML of custom page to display messages or input forms. Action functions for the input forms can be written in native or browser Javascript.
+- The action can be defined per web site (URL pattern).
+- It is a ordered list of firing events (click, focus, etc.) or inserting input values.
+- It is defined as function of URL (including query strings) of web site.
 
-Features:
-- Customizable icon and menu in Chrome toolbar and context menu
-- By clicking the menu item, user Javascript code is executed
-- User script can be a Node.js Javascript executed in the local PC
-  (Arbitary program of local PC can be called from Node.js scirpt)
-- User script can be javascript executed in sandbox in the web browser
-- User script receives info. of the active page (URL, title, HTML, etc.)
-- User script can include a HTML text of a custom page which would be used to display messages or user input forms
-- Action functions for the input forms can be written in natieve or browser Javascript.
-- Action function receives the form data from custom page 
-  and return value from the previous user script or action function.
-- Action function also can include custom page HTML
-- Action function can be called directly from the user script or action function.
-- Filter menu items by prefix of URL of active page
-- For Windows PC only
+For example:
+When opened web site of URL=https://www.google.com?injectWebActions=blahblah,
+this extention automatically inserts "blahblah" (included in the URL) in search box and clicks search button.
 
-Installation:
-This extension requires Native Client installed in the local Windows PC.
-The installation instruction is displayed at the installation of this extens ion.
+Actions are defined and modified by GUI, and stored in the local storage of the web browser.
+These also can be imported by opening the specific URL with query string of action description.
