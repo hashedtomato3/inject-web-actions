@@ -1,4 +1,4 @@
-# native-script-caller
+# inject web actions
 Chrome Extension that calls native node.js script from browser.
 
 * [Chrome Store page](https://chrome.google.com/webstore/detail/native-script-caller/ckgdggmpioeabapnhoglbmeibhbdmmoe)
