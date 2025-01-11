@@ -11,16 +11,27 @@ Chrome Extension that calls native node.js script from browser.
 ### Used versions
 
 ```
-> node -v
-v14.16.0
-> vue -V
-@vue/cli 4.5.12
-> npm list vue -g
-C:\Users\sdkn1\AppData\Roaming\npm
-+-- @vue/cli@4.5.12
-| `-- vue@2.6.12
-`-- @vue/cli-service-global@4.5.12
-  `-- vue@2.6.12
+$ node -v     
+v22.12.0                                
+$ npm list    
+vue@0.1.0 /home/sdkn104/inject-web-actio
+ns/vue                                  
+├── @vue/cli-plugin-babel@4.5.19        
+├── @vue/cli-plugin-eslint@4.5.19       
+├── @vue/cli-service@4.5.19             
+├── babel-eslint@10.1.0                 
+├── bindings@1.5.0 extraneous           
+├── buefy@0.9.29                        
+├── core-js@3.11.1                      
+├── eslint-plugin-vue@6.2.2             
+├── eslint@6.8.0                        
+├── file-uri-to-path@1.0.0 extraneous   
+├── jshint@2.13.6                       
+├── jszip@3.10.1                        
+├── nan@2.22.0 extraneous               
+├── vue-codemirror@4.0.6                
+├── vue-template-compiler@2.7.16        
+└── vue@2.7.16           
 ```
 
 ### Creation of Development Environment (Vue)
