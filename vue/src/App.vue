@@ -76,16 +76,16 @@
 
               <div style="margin:0px; padding:0px; height:100%;width:100%">
 
+                <!----- Rule BARs ----->
                 <div class="panel" animation="slide" style="margin: 5px 0px 5px 40px; height:100%"
-                  v-for="(rule, index) of allData.rules" :key="index" :index="index"
+                  v-for="(rule, index) of allData.rules" :key="rule.title" :index="index"
                   :manualData="manualData">
 
-                  <!----- Rule BARs ----->
                   <div class="my-button" style="display:flex; padding:4px 0 4px 10px; " v-on:click="modalActive = true; selectedRule = rule;">
                     <div style="margin: 0 auto 0 0">
                       {{ rule?.title }}
                     </div>
-                    <b-button type="is-primary" inverted v-on:click.stop="selectedRule = blankRule; allData.rules.splice(index, 1)"
+                    <b-button type="is-primary" inverted v-on:click="selectedRule = blankRule; allData.rules.splice(index, 1); modalActive = false"
                       title="Delete">
                       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                         <path fill="currentColor"
@@ -93,7 +93,6 @@
                       </svg>
                     </b-button>
                   </div>
-
                 </div>
 
                   <!----- POPUP for each Rule -------->
