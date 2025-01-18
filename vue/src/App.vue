@@ -302,7 +302,7 @@ export default {
       const storageData = await chromeStorageLocalGet(common.storageKey);
       let settings = storageData[common.storageKey];
       if (!("rules" in settings)) {
-        settings = { rules: [] }
+        settings = common.defaultRule;
       }
       console.log("settings", settings);
       this.allData = settings;
