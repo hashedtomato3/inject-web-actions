@@ -82,7 +82,7 @@
                   :manualData="manualData" :testvar.sync="testvar">
 
                   <!----- Rule BARs ----->
-                  <div class="my-button" style="display:flex; padding:4px 0 4px 10px; " v-on:click="modalActive = true">
+                  <div class="my-button" style="display:flex; padding:4px 0 4px 10px; " v-on:click="modalActive = true; selectedRule = rule;">
                     <div style="margin: 0 auto 0 0">
                       {{ rule.title }}
                     </div>
@@ -94,6 +94,8 @@
                       </svg>
                     </b-button>
                   </div>
+
+                </div>
 
                   <!----- POPUP for each Rule -------->
                   <b-modal :active="modalActive" @close="modalActive = false" full-screen scroll="keep"
@@ -114,24 +116,24 @@
                       <div>
                         <form style="height:100%">
                           <b-field label="Title" horizontal>
-                            <input class="input" type="text" v-model="rule.title" :title="manualData[0].description">
+                            <input class="input" type="text" v-model="selectedRule.title" :title="manualData[0].description">
                           </b-field>
                           <b-field label="URL Patterns" horizontal>
-                            <input class="input" type="text" v-model="rule.url_patterns"
+                            <input class="input" type="text" v-model="selectedRule.url_patterns"
                               :title="manualData[1].description">
                           </b-field>
                           <b-field label="Injection Delay (in msec.)" horizontal>
-                            <input class="input" type="number" v-model="rule.delay"
+                            <input class="input" type="number" v-model="selectedRule.delay"
                               :title="manualData[2].description">
                           </b-field>
                           <b-field label="Action Generator" horizontal>
-                            <codemirror v-model="rule.action_generator" :options="cmOptions" />
+                            <codemirror v-model="selectedRule.action_generator" :options="cmOptions" />
                           </b-field>
                         </form>
                       </div>
                     </div>
                   </b-modal>
-                </div>
+                
               </div>
             </div>
 
@@ -276,6 +278,7 @@ export default {
         }
       ],
       modalActive: false,
+      selectedRule: null,
       cmOptions: { // code mirror options
         mode: "javascript",
         lineNumbers: true,
