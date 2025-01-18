@@ -67,7 +67,7 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
             console.debug("Loaded settings: ", settings)
 
             // for settings.rules, execute actions
-            for( const rule of settings.rules ) {
+            for( const rule of settings?.rules ) {
                 console.debug("for rule: ", rule, tab.url)
                 if( tab.url?.startsWith(rule.url_patterns) ) {
                     // execute action_generator in sandbox, and get actions
