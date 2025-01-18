@@ -78,7 +78,6 @@
 
                 <div class="panel" animation="slide" style="margin: 5px 0px 5px 40px; height:100%"
                   v-for="(rule, index) of allData.rules" :key="index" :index="index"
-                  v-on:delete="allData.rules.splice(index, 1);"
                   :manualData="manualData">
 
                   <!----- Rule BARs ----->
@@ -86,7 +85,7 @@
                     <div style="margin: 0 auto 0 0">
                       {{ rule?.title }}
                     </div>
-                    <b-button type="is-primary" inverted v-on:click.stop="allData.rules.splice(index, 1); modalActive = false;"
+                    <b-button type="is-primary" inverted v-on:click.stop="selectedRule = blankRule; allData.rules.splice(index, 1); modalActive = false;"
                       title="Delete">
                       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                         <path fill="currentColor"
@@ -205,6 +204,13 @@ import 'codemirror/addon/edit/closebrackets.js'
 import 'codemirror/addon/lint/lint.js'
 import 'codemirror/addon/lint/javascript-lint.js'
 
+const blankRule = {
+  title:null, 
+  url_patterns:null,
+  delay:null,
+  action_generator:null"
+}
+  
 // Promisified version of chrome extension APIs
 function chromeRuntimeSendMessage(message) {
   return new Promise((resolve, reject) => {
@@ -278,7 +284,7 @@ export default {
         }
       ],
       modalActive: false,
-      selectedRule: null,
+      selectedRule: blankRule,
       cmOptions: { // code mirror options
         mode: "javascript",
         lineNumbers: true,
