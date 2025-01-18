@@ -10,7 +10,7 @@ common.defaultSettings = {
         {
             title: "Yahoo Search",
             url_patterns: "https://www.yahoo.com",
-            action_generator: "(url) => { return {selector: ""} }"
+            action_generator: "(url) => { return {selector: ''} }"
         }
     ]
 }
