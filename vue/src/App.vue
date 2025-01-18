@@ -208,7 +208,7 @@ const blankRule = {
   title:null, 
   url_patterns:null,
   delay:null,
-  action_generator:null"
+  action_generator:null,
 }
   
 // Promisified version of chrome extension APIs
