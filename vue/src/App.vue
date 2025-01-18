@@ -78,8 +78,8 @@
 
                 <div class="panel" animation="slide" style="margin: 5px 0px 5px 40px; height:100%"
                   v-for="(rule, index) of allData.rules" :key="index" :index="index"
-                  v-on:delete="allData.rules.splice(index, 1);" v-bind:rule="allData.rules[index]"
-                  :manualData="manualData" :testvar.sync="testvar">
+                  v-on:delete="allData.rules.splice(index, 1);"
+                  :manualData="manualData">
 
                   <!----- Rule BARs ----->
                   <div class="my-button" style="display:flex; padding:4px 0 4px 10px; " v-on:click="modalActive = true; selectedRule = rule;">
