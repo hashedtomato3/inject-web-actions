@@ -72,7 +72,7 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
 
             // load settings from local storage
             const storageData = await chromeStorageLocalGet(common.storageKey);
-            const settings = storageData[common.storageKey];
+            let settings = storageData[common.storageKey];
             console.debug("Loaded settings: ", settings)
             if(!settings) {
                 settings = common.defaultSettings;
