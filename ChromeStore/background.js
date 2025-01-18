@@ -81,7 +81,7 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
             // for settings.rules, execute actions
             for( const rule of settings?.rules ) {
                 console.debug("for rule: ", rule, tab.url)
-                if( rule.url_patterns && !rule.url_patterns.startWith("chrome-extension") && tab.url?.startsWith(rule.url_patterns) ) {
+                if( rule.url_patterns && !rule.url_patterns.startsWith("chrome-extension") && tab.url?.startsWith(rule.url_patterns) ) {
                     // execute action_generator in sandbox, and get actions
                     const resp = await executeSandboxScript({script:rule.action_generator, info:tab.url});
                     const actions = resp.response;
