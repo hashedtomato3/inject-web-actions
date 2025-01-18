@@ -5,6 +5,15 @@
 const common = {};
 common.appName = "com.node.inject_web_actions"
 common.storageKey = common.appName + ".storage_key"
+common.defaultSettings = {
+    rules: [
+        {
+            title: "Yahoo Search",
+            url_patterns: "https://www.yahoo.com",
+            action_generator: "(url) => { return {selector: ""} }"
+        }
+    ]
+}
 
 // Promisified function of Chrome extension APIs
 function chromeStorageLocalGet(key) {
@@ -65,6 +74,9 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
             const storageData = await chromeStorageLocalGet(common.storageKey);
             const settings = storageData[common.storageKey];
             console.debug("Loaded settings: ", settings)
+            if(!settings) {
+                settings = common.defaultSettings;
+            }
 
             // for settings.rules, execute actions
             for( const rule of settings?.rules ) {
