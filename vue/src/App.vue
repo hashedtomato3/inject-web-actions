@@ -85,7 +85,7 @@
                     <div style="margin: 0 auto 0 0">
                       {{ rule?.title }}
                     </div>
-                    <b-button type="is-primary" inverted v-on:click="selectedRule = blankRule; allData.rules.splice(index, 1)"
+                    <b-button type="is-primary" inverted v-on:click.stop="selectedRule = blankRule; allData.rules.splice(index, 1)"
                       title="Delete">
                       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                         <path fill="currentColor"
