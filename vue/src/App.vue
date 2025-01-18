@@ -109,24 +109,24 @@
                               d="M13.5 21H6V17H13.5C15.43 17 17 15.43 17 13.5S15.43 10 13.5 10H11V14L4 8L11 2V6H13.5C17.64 6 21 9.36 21 13.5S17.64 21 13.5 21Z" />
                           </svg>
                         </b-button>
-                        <p class="title is-4">[Rule] {{ selectedRule?.title }}</p>
+                        <p class="title is-4">[Rule] {{ selectedRule.title }}</p>
                       </div>
                       <!--- contents --->
                       <div>
                         <form style="height:100%">
                           <b-field label="Title" horizontal>
-                            <input class="input" type="text" v-model="selectedRule?.title" :title="manualData[0].description">
+                            <input class="input" type="text" v-model="selectedRule.title" :title="manualData[0].description">
                           </b-field>
                           <b-field label="URL Patterns" horizontal>
-                            <input class="input" type="text" v-model="selectedRule?.url_patterns"
+                            <input class="input" type="text" v-model="selectedRule.url_patterns"
                               :title="manualData[1].description">
                           </b-field>
                           <b-field label="Injection Delay (in msec.)" horizontal>
-                            <input class="input" type="number" v-model="selectedRule?.delay"
+                            <input class="input" type="number" v-model="selectedRule.delay"
                               :title="manualData[2].description">
                           </b-field>
                           <b-field label="Action Generator" horizontal>
-                            <codemirror v-model="selectedRule?.action_generator" :options="cmOptions" />
+                            <codemirror v-model="selectedRule.action_generator" :options="cmOptions" />
                           </b-field>
                         </form>
                       </div>
