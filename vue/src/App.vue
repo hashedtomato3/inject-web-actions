@@ -301,7 +301,7 @@ export default {
       const common = await chromeRuntimeSendMessage("get-common");
       const storageData = await chromeStorageLocalGet(common.storageKey);
       let settings = storageData[common.storageKey];
-      if (!("rules" in settings)) {
+      if (!(settings)) {
         settings = common.defaultSettings;
       }
       console.log("settings", settings);
