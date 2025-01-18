@@ -95,7 +95,7 @@
                   </div>
                 </div>
 
-                  <!----- POPUP for each Rule -------->
+                <!----- POPUP for each Rule -------->
                   <b-modal :active="modalActive" @close="modalActive = false" full-screen scroll="keep"
                     can-cancel="false" style="height:100%">
                     <div class="box" style=" height:1000px;">
