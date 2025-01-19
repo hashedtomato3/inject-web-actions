@@ -112,7 +112,7 @@ async function executeActionsOnTabPage(tabId, changeInfo, tab, actions, delay) {
                 } else if("event" in a ) {
                     elem.dispatchEvent(new Event(a.event));
                 } else if("delay" in a ) {
-                    await new Promise(resolve => setTimeout(resolve, a.delay));
+                    await new Promise(resolve => setTimeout(resolve, delay));
                 }
             });
         }
