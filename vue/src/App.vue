@@ -96,7 +96,7 @@
                 </div>
 
                 <!----- POPUP for each Rule -------->
-                  <b-modal :active="modalActive" @close="modalActive = false" full-screen scroll="keep"
+                <b-modal :active="modalActive" @close="modalActive = false" full-screen scroll="keep"
                     can-cancel="false" style="height:100%">
                     <div class="box" style=" height:1000px;">
                       <!--- head line --->
@@ -130,7 +130,7 @@
                         </form>
                       </div>
                     </div>
-                  </b-modal>
+                </b-modal>
                 
               </div>
             </div>
@@ -197,8 +197,7 @@ import { codemirror } from 'vue-codemirror';
 //import { basicSetup } from "@codemirror/basic-setup";
 //import { oneDark } from "@codemirror/theme-one-dark";
 import JSHINT from "jshint";
-console.log(JSHINT)
-window.JSHINT = JSHINT.JSHINT;
+window.JSHINT = JSHINT.JSHINT; // hack: javascript-lint.js use winfow.JSHINT()
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/mode/javascript/javascript.js'
 import 'codemirror/addon/lint/lint.css'
@@ -300,7 +299,7 @@ export default {
         gutters: ["CodeMirror-lint-markers"],
         lint: { esversion: 6 },
       },
-      dummy: JSHINT,
+      //dummy: JSHINT,
     };
   },
   computed: {
