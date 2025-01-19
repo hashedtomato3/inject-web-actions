@@ -198,7 +198,7 @@ import { codemirror } from 'vue-codemirror';
 //import { oneDark } from "@codemirror/theme-one-dark";
 import JSHINT from "jshint";
 console.log(JSHINT)
-window.JSHINT = JSHINT;
+window.JSHINT = JSHINT.JSHINT.
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/mode/javascript/javascript.js'
 import 'codemirror/addon/lint/lint.css'
