@@ -106,7 +106,7 @@ async function executeActionsOnTabPage(tabId, changeInfo, tab, actions, delay) {
             const elems = document.querySelectorAll(a.selector);
             console.debug("action selector -> elements: ", a.selector, elems)
             elems.forEach((elem) => {
-                if(a.type === "value") {
+                if("value" in a) {
                     elem.value = a.value;
                 } else {
                     elem.dispatchEvent(new Event(a.event));
