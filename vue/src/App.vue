@@ -196,7 +196,7 @@
 import { codemirror } from 'vue-codemirror';
 //import { basicSetup } from "@codemirror/basic-setup";
 //import { oneDark } from "@codemirror/theme-one-dark";
-import JSHINT from "jshint";
+//import JSHINT from "jshint";
 //import 'codemirror/lib/codemirror.css'
 //import 'codemirror/mode/javascript/javascript.js'
 //import 'codemirror/addon/lint/lint.css'
