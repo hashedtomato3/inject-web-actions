@@ -206,6 +206,8 @@ import 'codemirror/addon/edit/matchbrackets.js'
 import 'codemirror/addon/edit/closebrackets.js'
 import 'codemirror/addon/lint/lint.js'
 import 'codemirror/addon/lint/javascript-lint.js'
+import 'codemirror/theme/base16-dark.css'
+
 
 const blankRule = {
   title:null, 
@@ -292,6 +294,7 @@ export default {
         mode: "javascript",
         //extensions: [basicSetup],
         //theme: oneDark,
+        theme: 'base16-dark',
         lineNumbers: true,
         styleActiveLine: true,
         matchBrackets: true,
