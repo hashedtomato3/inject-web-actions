@@ -105,7 +105,7 @@ async function executeActionsOnTabPage(tabId, changeInfo, tab, actions, delay) {
         for(const a of actions ) {
             const elems = document.querySelectorAll(a.selector);
             console.debug("action selector -> elements: ", a.selector, elems)
-            elems.forEach((elem) => {
+            for(const elem of elems) {
                 
                 if("value" in a) {
                     elem.value = a.value;
@@ -114,7 +114,7 @@ async function executeActionsOnTabPage(tabId, changeInfo, tab, actions, delay) {
                 } else if("delay" in a ) {
                     await new Promise(resolve => setTimeout(resolve, delay));
                 }
-            });
+            }
         }
         console.debug("end injectionCode")
         return true;
