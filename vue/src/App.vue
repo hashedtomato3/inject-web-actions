@@ -334,7 +334,7 @@ export default {
 }`
       });
     },
-    onclick_bar: function(event, index) {
+    onclick_bar: function(type, index) {
         console.log(event)
         if(type === "delete") {
           this.selectedRule = blankRule; 
