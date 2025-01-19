@@ -335,11 +335,10 @@ export default {
       });
     },
     onclick_bar: function(type, index) {
-        console.log(event)
         if(type === "delete") {
           this.selectedRule = blankRule; 
           this.allData.rules.splice(index, 1);
-        } else {
+        } else { // select
           this.modalActive = true; 
           this.selectedRule = this.allData.rules[index];
         }
