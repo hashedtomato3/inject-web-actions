@@ -333,7 +333,8 @@ export default {
     return actions;
 }`
       });
-      onclick_bar: function(event, rule) {
+    },
+    onclick_bar: function(event, rule) {
         console.log(event)
         if(event.target.tagName === "b-buttom") {
           ;
@@ -341,7 +342,6 @@ export default {
           this.modalActive = true; 
           this.selectedRule = rule;
         }
-      }
     }
   },
   components: {
