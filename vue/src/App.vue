@@ -363,11 +363,11 @@ export default {
 
 <style>
 .my-button {
-  background-color: white;
+  background-color: floralwhite;
 }
 
 .my-button:hover {
-  background-color: whitesmoke;
+  background-color: linen;
 }
 
 .CodeMirror {
