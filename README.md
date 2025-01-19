@@ -38,12 +38,16 @@ ns/vue
 
 ```
 - install node and npm
+>nvm install 14.16.0              
+>nvm use 14.16.0
+>node -v
 > //npm install -g vue  (vue2)  // not required, vue cli includes vue???
 > npm install -g @vue/cli  
 > vue create vue   // specifying vue2 default
 > cd vue
 > npm install buefy
 > npm install vue-codemirror
+> npm install jshint
 - add to package.json
   "eslintConfig": {
     "env": {
@@ -60,8 +64,13 @@ ns/vue
 OR
 
 ```
+>nvm install 14.16.0              
+>nvm use 14.16.0
+>node -v
 cd vue
 npm install  // install all for ./packatge.json
+  or,
+npm ci // install for package-lock.json
 ```
 
 ### Build and Deploy
