@@ -99,21 +99,25 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
 async function executeActionsOnTabPage(tabId, changeInfo, tab, actions, delay) {
     console.debug("---- executeActionsOnTabPage --------", tabId, tab)
     // injection code definition
-    function injectionCode(actions){
+    async function injectionCode(actions){
         console.debug("start injectionCode: ",actions)
         // do each action
-        actions.forEach((a) => {
+        for(const a of actions ) {
             const elems = document.querySelectorAll(a.selector);
             console.debug("action selector -> elements: ", a.selector, elems)
             elems.forEach((elem) => {
+                
                 if("value" in a) {
                     elem.value = a.value;
-                } else {
+                } else if("event" in a ) {
                     elem.dispatchEvent(new Event(a.event));
-                }    
+                } else if("delay" in a ) {
+                    await new Promise(resolve => setTimeout(resolve, a.delay));
+                }
             });
-        })
+        }
         console.debug("end injectionCode")
+        return true;
     }
     // activate target tab
     await chrome.tabs.update(tabId, { active: true });
