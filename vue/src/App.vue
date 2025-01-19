@@ -298,6 +298,7 @@ export default {
         gutters: ["CodeMirror-lint-markers"],
         lint: { esversion: 6 },
       },
+      dummy: JSHINT,
     };
   },
   computed: {
