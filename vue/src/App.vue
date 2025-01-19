@@ -194,14 +194,17 @@
 //import Test from './components/Test.vue'
 
 import { codemirror } from 'vue-codemirror';
-import 'codemirror/lib/codemirror.css'
-import 'codemirror/mode/javascript/javascript.js'
-import 'codemirror/addon/lint/lint.css'
-import 'codemirror/addon/selection/active-line.js'
-import 'codemirror/addon/edit/matchbrackets.js'
-import 'codemirror/addon/edit/closebrackets.js'
-import 'codemirror/addon/lint/lint.js'
-import 'codemirror/addon/lint/javascript-lint.js'
+import { basicSetup } from "@codemirror/basic-setup";
+import { oneDark } from "@codemirror/theme-one-dark";
+//import JSHINT from "jshint";
+//import 'codemirror/lib/codemirror.css'
+//import 'codemirror/mode/javascript/javascript.js'
+//import 'codemirror/addon/lint/lint.css'
+//import 'codemirror/addon/selection/active-line.js'
+//import 'codemirror/addon/edit/matchbrackets.js'
+//import 'codemirror/addon/edit/closebrackets.js'
+//import 'codemirror/addon/lint/lint.js'
+//import 'codemirror/addon/lint/javascript-lint.js'
 
 const blankRule = {
   title:null, 
@@ -286,6 +289,8 @@ export default {
       selectedRule: blankRule,
       cmOptions: { // code mirror options
         mode: "javascript",
+        extensions: [basicSetup],
+        theme: oneDark,
         lineNumbers: true,
         styleActiveLine: true,
         matchBrackets: true,
