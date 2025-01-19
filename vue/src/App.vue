@@ -197,14 +197,14 @@ import { codemirror } from 'vue-codemirror';
 //import { basicSetup } from "@codemirror/basic-setup";
 //import { oneDark } from "@codemirror/theme-one-dark";
 //import JSHINT from "jshint";
-//import 'codemirror/lib/codemirror.css'
-//import 'codemirror/mode/javascript/javascript.js'
-//import 'codemirror/addon/lint/lint.css'
-//import 'codemirror/addon/selection/active-line.js'
-//import 'codemirror/addon/edit/matchbrackets.js'
-//import 'codemirror/addon/edit/closebrackets.js'
-//import 'codemirror/addon/lint/lint.js'
-//import 'codemirror/addon/lint/javascript-lint.js'
+import 'codemirror/lib/codemirror.css'
+import 'codemirror/mode/javascript/javascript.js'
+import 'codemirror/addon/lint/lint.css'
+import 'codemirror/addon/selection/active-line.js'
+import 'codemirror/addon/edit/matchbrackets.js'
+import 'codemirror/addon/edit/closebrackets.js'
+import 'codemirror/addon/lint/lint.js'
+import 'codemirror/addon/lint/javascript-lint.js'
 
 const blankRule = {
   title:null, 
