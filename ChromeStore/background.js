@@ -106,13 +106,13 @@ async function executeActionsOnTabPage(tabId, changeInfo, tab, actions, delay) {
             const elems = document.querySelectorAll(a.selector);
             console.debug("action selector -> elements: ", a.selector, elems)
             for(const elem of elems) {
-                
+                console.log("doing action",a);
                 if("value" in a) {
                     elem.value = a.value;
                 } else if("event" in a ) {
                     elem.dispatchEvent(new Event(a.event));
                 } else if("delay" in a ) {
-                    await new Promise(resolve => setTimeout(resolve, delay));
+                    await new Promise(resolve => setTimeout(resolve, 3000));
                 }
             }
         }
