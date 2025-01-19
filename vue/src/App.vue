@@ -81,11 +81,11 @@
                   v-for="(rule, index) of allData.rules" :key="rule.title" :index="index"
                   :manualData="manualData">
 
-                  <div class="my-button" style="display:flex; padding:4px 0 4px 10px; " v-on:click="onclick_bar('select', index)">
+                  <div class="my-button" style="display:flex; padding:4px 0 4px 10px; " v-on:click="onclick_select(rule)">
                     <div style="margin: 0 auto 0 0">
                       {{ rule?.title }}
                     </div>
-                    <b-button type="is-primary" inverted v-on:click="onclick_bar('delete', index);"
+                    <b-button type="is-primary" inverted v-on:click="onclick_delete(index);"
                       title="Delete">
                       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                         <path fill="currentColor"
@@ -344,14 +344,15 @@ export default {
 }`
       });
     },
-    onclick_bar: function(type, index) {
-        if(type === "delete") {
+    onclick_select: function(rule) {
+      if(rule){
+          this.modalActive = true; 
+          this.selectedRule = rule;
+      }
+    },
+    onclick_delete: function( index) {
           this.selectedRule = blankRule; 
           this.allData.rules.splice(index, 1);
-        } else { // select
-          this.modalActive = true; 
-          this.selectedRule = this.allData.rules[index];
-        }
     }
   },
   components: {
