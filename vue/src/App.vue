@@ -194,8 +194,8 @@
 //import Test from './components/Test.vue'
 
 import { codemirror } from 'vue-codemirror';
-import { basicSetup } from "@codemirror/basic-setup";
-import { oneDark } from "@codemirror/theme-one-dark";
+//import { basicSetup } from "@codemirror/basic-setup";
+//import { oneDark } from "@codemirror/theme-one-dark";
 //import JSHINT from "jshint";
 //import 'codemirror/lib/codemirror.css'
 //import 'codemirror/mode/javascript/javascript.js'
@@ -289,8 +289,8 @@ export default {
       selectedRule: blankRule,
       cmOptions: { // code mirror options
         mode: "javascript",
-        extensions: [basicSetup],
-        theme: oneDark,
+        //extensions: [basicSetup],
+        //theme: oneDark,
         lineNumbers: true,
         styleActiveLine: true,
         matchBrackets: true,
