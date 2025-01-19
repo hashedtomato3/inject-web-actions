@@ -47,6 +47,11 @@ function chromeTabsSendMessage(tabId, message) {
     });
 }
 
+// on insalled
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.runtime.openOptionsPage();
+});
+
 // on message from options page menu
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     if( message == "get-common" ) { // on click of setup botton in option page
