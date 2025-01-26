@@ -110,10 +110,32 @@ async function executeActionsOnTabPage(tabId, changeInfo, tab, actions, delay) {
         for(const a of actions ) {
             const elems = document.querySelectorAll(a.selector);
             console.debug("doing action: ", a, elems)
+            console.log("va", ("value" in a));
+            console.log("ev", ("event" in a));
             if("value" in a) {
                 elems.forEach((elem) => { elem.value = a.value;})
             } else if("event" in a ) {
-                elems.forEach((elem) => { elem.dispatchEvent(new Event(a.event));})
+                console.log("event: ", a.event)
+                if( a.eventConstructor === "InputEvent" ) {
+                    e = new InputEvent(a.event, a.eventOptions);
+                } else if( a.eventConstructor === "KeyboardEvent" ) {
+                    e = new KeyboardEvent(a.event, a.eventOptions);
+                } else if( a.eventConstructor === "MouseEvent" ) {
+                    e = new MouseEvent(a.event, a.eventOptions);
+                } else if( a.eventConstructor === "WheelEvent" ) {
+                    e = new WheelEvent(a.event, a.eventOptions);
+                } else if( a.eventConstructor === "CompositionEvent" ) {
+                    e = new CompositionEvent(a.event, a.eventOptions);
+                } else {
+                    e = new Event(a.event);
+                }
+                console.log("event: ", e)
+                elems.forEach((elem) => { 
+                    console.log("firing: ", a.event)
+                    const r = elem.dispatchEvent(e); 
+                    console.log("fired: ", r)
+            
+                })
             } else if("delay" in a ) {
                 await new Promise(resolve => setTimeout(resolve, 3000));
             }
@@ -133,7 +155,7 @@ async function executeActionsOnTabPage(tabId, changeInfo, tab, actions, delay) {
         func:injectionCode,
         args: [actions]
     });
-
+    console.debug("result of injectionCode: ", r)
     return r;
 }
 

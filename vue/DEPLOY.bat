@@ -1,13 +1,12 @@
 
 rmdir /s /q ..\ChromeStore\vue\dist
-REM rmdir /s /q ..\ChromeStore\vue\src
-REM rmdir /s /q ..\ChromeStore\vue\public
+REM rm -rf ../ChromeStore/vue/dist
 
 xcopy /e /y dist ..\ChromeStore\vue\dist\
-REM xcopy /e /y src ..\ChromeStore\vue\src\
-REM xcopy /e /y public ..\ChromeStore\vue\public\
+REM cp -rf dist ../ChromeStore/vue/dist
 
 REM powershell compress-archive ..\ChromeStore\host ..\ChromeStore\host.zip -Force
+REM REM (cd ..; zip -r ChromeStore.zip ChromeStore)
 
 powershell compress-archive ..\ChromeStore ..\ChromeStore.zip -Force
 

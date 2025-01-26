@@ -13,7 +13,9 @@ Chrome Extension that calls native node.js script from browser.
 ```
 $ node -v     
 v14.16.0                                
-$ npm list vue    
+$ npm list vue
+vue@0.1.0 /home/sdkn104/inject-web-actions/vue 
++--vue@2.7.16 
 ```
 
 ### Creation of Development Environment (Vue)

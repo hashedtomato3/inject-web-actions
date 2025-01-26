@@ -27,13 +27,14 @@
           <div v-if="menuActiveAbout">
             <p class="subtitle">About</p>
             <p>
-              Automatically execute pre-defined actions (inserting values, clicking buttons, etc.) when new web page
-              loaded.
+              Automatically execute user-defined actions (inserting values, clicking buttons, etc.) 
+              on web page when the page is loaded.
             </p>
             <ul>
-              <li>- The action can be defined per web site (URL pattern).</li>
-              <li>- It is a ordered list of firing events (click, focus, etc.) or inserting input values.</li>
-              <li>- It is defined as function of URL (including query strings) of web site.</li>
+              <li>- A list of actions can be defined per web site (per URL pattern). </li>
+              <li>- When the web page matched to the specified URL pattern is loaded, the actions are executed in order.</li>
+              <li>- An action is either firing event (click, focus, etc.) or inserting input value.</li>
+              <li>- The actions are defined as a function of URL of the web site.</li>
             </ul>
             <br>
             <p>
@@ -44,7 +45,7 @@
             </p>
             <br>
             <p>
-              Actions are defined and modified by GUI, and stored in the local storage of the web browser.
+              Actions are defined and modified in GUI, and they are stored in the local storage of the web browser.
               These also can be imported by opening the specific URL with query string of action description.
             </p>
           </div>
